@@ -2,11 +2,12 @@
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import AllAuth from "./AllAuth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+    const location = useLocation()  
 
     const { googleLogin, githubLogin, loginUser } = AllAuth()
     const navigate = useNavigate();
@@ -15,12 +16,11 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
-
         loginUser(email, password)
             .then(() => {
                 toast.success('Login successfully');
                 e.target.reset();
-                navigate("/")
+                navigate(location?.state? location?.state : "/")
 
             })
             .catch(() => { toast.warning("Invalid User or Password") })

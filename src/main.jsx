@@ -13,6 +13,7 @@ import AvailableFoods from './pages/AvailableFoods.jsx';
 import ManageMyFoods from './pages/ManageMyFoods.jsx';
 import MyFoodRequest from './pages/MyFoodRequest.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import VewFoodDetails from './pages/VewFoodDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        loader: () => fetch("http://localhost:5000/food")
       },
       {
         path: "/addFood",
@@ -32,6 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/availableFoods",
         element: <AvailableFoods />,
+        loader: () => fetch("http://localhost:5000/food")        
       },
       {
         path: "/manageMyFoods",
@@ -48,6 +51,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/food/:id",
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
+        element: <PrivateRoute><VewFoodDetails /></PrivateRoute>,
+
       },
     ],
   },

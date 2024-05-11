@@ -22,7 +22,7 @@ const AddFood = () => {
         const addedFood = { foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes,email,name,userimage }
         console.log(addedFood);
 
-        fetch("https://b9a10-paradise-tours-server.vercel.app/paradiceTours", {
+        fetch("http://localhost:5000/food", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
