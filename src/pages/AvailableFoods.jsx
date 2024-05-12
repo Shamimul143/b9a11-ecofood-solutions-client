@@ -16,7 +16,7 @@ const AvailableFoods = () => {
                         <div className="card-body">
                             <div>
                                 <img className='w-10 rounded-full' src={item.userimage} alt="image" />
-                                <p>Donator Name: {name}</p>
+                                <p>Donator Name: {item.name}</p>
                             </div>
                             <h2 className="card-title"> FoodName: {item.foodName}</h2>
                             <p>FoodQuantity : {item.foodQuantity}</p>

@@ -11,7 +11,7 @@ const FeaturedFoods = ({ food }) => {
             <figure><img className='h-[300px] rounded-lg p-4' src={imageUrl} alt="Shoes" /></figure>           
             <div className="card-body">
             <div>
-                <img className='w-10' src={userimage} alt="image" />
+                <img className='w-10 rounded-full' src={userimage} alt="image" />
                 <p>Donator Name: {name}</p>
             </div>
                 <h2 className="card-title"> FoodName: {foodName}</h2>

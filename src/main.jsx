@@ -15,6 +15,7 @@ import MyFoodRequest from './pages/MyFoodRequest.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import VewFoodDetails from './pages/VewFoodDetails.jsx';
 import UpdateFood from './components/UpdateFood.jsx';
+import SingleFoodDeteils from './components/SingleFoodDeteils.jsx';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,12 @@ const router = createBrowserRouter([
         path: "/updatepage/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
         element: <UpdateFood></UpdateFood>,
+
+      },
+      {
+        path: "/singleFoodDeteils/:id",
+        element: <SingleFoodDeteils></SingleFoodDeteils>,
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
 
       },
     ],

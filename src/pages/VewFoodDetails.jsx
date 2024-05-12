@@ -1,10 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const VewFoodDetails = () => {
     const foodDetails = useLoaderData()
 
-    const { foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, name } = foodDetails
+    const {_id, foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, name } = foodDetails
 
 
 
@@ -18,14 +18,16 @@ const VewFoodDetails = () => {
                 <div className="w-1/2 mr-10">
                     <img src={imageUrl} alt="Album" />
                 </div>
-                <div className="space-y-2 w-1/2">
-                    <h2 className="card-title"> FoodName: {foodName}</h2>
-                    <p>Donator Image & Name: {name}</p>
-                    <p>FoodQuantity : {foodQuantity}</p>
+                <div className="space-y-2 w-1/2">                    
+                    <h2 className="card-title"> Donor Information:</h2>
+                    <p>Donator Name: {name}</p>
                     <p>Pickup Location: {pickupLocation}</p>
+                    <h2 className="card-title mt-8"> Food details:</h2>
+                    <h2> Food Name: {foodName}</h2>                    
+                    <p>Food Quantity : {foodQuantity}</p>                    
                     <p>Expired Date/Time: {expiredDateTime}</p>
                     <p>Additional Notes: {additionalNotes}</p>
-                    <button >request foods</button>
+                    <Link to={`/singleFoodDeteils/${_id}`}><button className="btn mt-5" >Request Foods</button></Link>
                 </div>
                 
             </div>
