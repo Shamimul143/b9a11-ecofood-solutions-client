@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -44,6 +45,7 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet><title>Register</title></Helmet>
             <div className=" flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left my-5">
                     <h1 className="text-5xl font-bold">Register now!</h1>

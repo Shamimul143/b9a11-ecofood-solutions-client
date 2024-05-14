@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import AllAuth from "./AllAuth";
+import { Helmet } from "react-helmet";
 
 
 const AddFood = () => {
@@ -48,6 +49,7 @@ const AddFood = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 py-10 ">
+            <Helmet><title>AddFood</title></Helmet>
             <div className=" flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left py-5">
                     <h1 className="text-5xl font-bold">Add a Food </h1>

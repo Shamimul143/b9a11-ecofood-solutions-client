@@ -5,6 +5,8 @@ import { createContext, useEffect, useState } from 'react';
 import auth from './firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import axios from 'axios';
+
 
 
 
@@ -15,8 +17,10 @@ const githubProvider = new GithubAuthProvider();
 
 
 const AuthContaxProvider = ({ children }) => {
+    
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+  
     
 console.log(user);
 
@@ -34,6 +38,13 @@ console.log(user);
         return signInWithPopup(auth, googleProvider)
             .then(() => {
                 toast.success("Login Successfully");
+                axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
+                .then(res=>{
+                    console.log(res.data);
+                    if(res.data.success){
+                        // navigate(location?.state? location?.state : "/")
+                    }
+                })
                 
             })
             .catch((error) => {
