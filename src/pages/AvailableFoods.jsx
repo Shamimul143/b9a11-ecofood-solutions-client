@@ -11,7 +11,7 @@ const AvailableFoods = () => {
     const [layout, setLayout] = useState(3)
     const [sort, setSort] = useState("")
 
-    const url = (`http://localhost:5000/food?sort=${sort}`)
+    const url = (`https://b9a11-ecofood-solutions-server.vercel.app/food?sort=${sort}`)
     useEffect(() => {
         axios.get(url)
             .then(res => {

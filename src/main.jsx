@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
-        loader: () => fetch("http://localhost:5000/food")
+        loader: () => fetch("https://b9a11-ecofood-solutions-server.vercel.app/food")
       },
       {
         path: "/addFood",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/myFoodRequest",
         element: <PrivateRoute><MyFoodRequest /></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/foodrequest")
+        loader: () => fetch("https://b9a11-ecofood-solutions-server.vercel.app/foodrequest")
       },
       {
         path: "/login",
@@ -57,20 +57,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/food/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
+        loader: ({ params }) => fetch(`https://b9a11-ecofood-solutions-server.vercel.app/food/${params.id}`),
         element: <PrivateRoute><VewFoodDetails /></PrivateRoute>,
 
       },
       {
         path: "/updatepage/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
+        loader: ({ params }) => fetch(`https://b9a11-ecofood-solutions-server.vercel.app/food/${params.id}`),
         element: <UpdateFood></UpdateFood>,
 
       },
       {
         path: "/singleFoodDeteils/:id",
         element: <SingleFoodDeteils></SingleFoodDeteils>,
-        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`),
+        loader: ({ params }) => fetch(`https://b9a11-ecofood-solutions-server.vercel.app/food/${params.id}`),
 
       },
     ],

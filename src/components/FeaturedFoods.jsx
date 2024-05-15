@@ -1,9 +1,10 @@
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AllAuth from '../pages/AllAuth';
 
 const FeaturedFoods = ({ food }) => {
-
+const {user}=AllAuth()
     const { _id, foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, name, userimage } = food
 
     return (
@@ -11,7 +12,9 @@ const FeaturedFoods = ({ food }) => {
             <figure><img className='h-[300px] rounded-lg p-4' src={imageUrl} alt="Shoes" /></figure>           
             <div className="card-body">
             <div>
-                <img className='w-10 rounded-full' src={userimage} alt="image" />
+                {
+                    user && <img className='w-10 rounded-full' src={userimage} alt="image" />
+                }
                 <p>Donator Name: {name}</p>
             </div>
                 <h2 className="card-title"> FoodName: {foodName}</h2>

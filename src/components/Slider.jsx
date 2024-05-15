@@ -19,7 +19,7 @@ import { Navigation } from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mt-10">
         <Swiper navigation={true} modules={[Navigation]} loop={true} className="mySwiper ">
           <SwiperSlide><div className="max-w-7xl"><img className="w-full h-[550px] rounded-lg" src={image1} alt="" /></div></SwiperSlide>
           <SwiperSlide><div className="max-w-7xl"><img className="w-full h-[550px] rounded-lg" src={image2} alt="" /></div></SwiperSlide>

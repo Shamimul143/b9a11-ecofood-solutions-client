@@ -24,7 +24,7 @@ const SingleFoodDeteils = () => {
         const requestedFood = { foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes, email, name, userimage }
         console.log(requestedFood);
 
-        fetch("http://localhost:5000/foodrequest", {
+        fetch("https://b9a11-ecofood-solutions-server.vercel.app/foodrequest", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const SingleFoodDeteils = () => {
             .then(res => res.json())
             .then(data => {
                 e.target.reset();
-                fetch(`http://localhost:5000/food/${_id}`, {
+                fetch(`https://b9a11-ecofood-solutions-server.vercel.app/food/${_id}`, {
                     method: 'DELETE'
                 })
                 console.log(data);

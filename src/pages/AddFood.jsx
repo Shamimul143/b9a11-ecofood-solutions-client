@@ -23,7 +23,7 @@ const AddFood = () => {
         const addedFood = { foodName, imageUrl, foodQuantity, pickupLocation, expiredDateTime, additionalNotes,email,name,userimage }
         console.log(addedFood);
 
-        fetch("http://localhost:5000/food", {
+        fetch("https://b9a11-ecofood-solutions-server.vercel.app/food", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

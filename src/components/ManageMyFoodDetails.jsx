@@ -20,7 +20,7 @@ const ManageMyFoodDetails = ({ item }) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/food/${_id}`, {
+                fetch(`https://b9a11-ecofood-solutions-server.vercel.app/food/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

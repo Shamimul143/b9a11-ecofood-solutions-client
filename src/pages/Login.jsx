@@ -24,7 +24,7 @@ const Login = () => {
                 e.target.reset();                
                 const user ={email}
 
-                axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
+                axios.post('https://b9a11-ecofood-solutions-server.vercel.app/jwt',user, {withCredentials:true})
                 .then(res=>{
                     console.log(res.data);
                     if(res.data.success){
@@ -40,7 +40,7 @@ const Login = () => {
     // const googleLogin = async () => {
     //     try {
     //       const result = await googleLogin();
-    //       const { data } = await axios.post( 'http://localhost:5000/jwt',
+    //       const { data } = await axios.post( 'https://b9a11-ecofood-solutions-server.vercel.app/jwt',
     //         {
     //           email: result?.user?.email,
     //         },

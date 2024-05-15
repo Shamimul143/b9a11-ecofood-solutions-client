@@ -11,7 +11,7 @@ const ManageMyFoods = () => {
     console.log(user);
     const [items, setItems] = useState([]);
 
-    const url = `http://localhost:5000/ManageMyFoods/${user?.email}`
+    const url = `https://b9a11-ecofood-solutions-server.vercel.app/ManageMyFoods/${user?.email}`
     useEffect(() => {
         axios.get(url, {withCredentials:true})
             .then(res => {
